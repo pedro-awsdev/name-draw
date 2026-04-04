@@ -112,17 +112,25 @@
         <p>Sorteador Especial para Universitários</p>
         
         <form method="POST">
-            <textarea name="nomes" placeholder="Nomes separados por ;">{{ nomes }}</textarea>
-            
-            <div style="display: flex; gap: 10px; margin-top: 15px;">
-                <button type="submit" name="origem" value="manual" style="flex: 1;">Sorteio Manual</button>
-                
-                <button type="submit" name="origem" value="google" 
-                        style="flex: 1; background: linear-gradient(135deg, #10b981, #059669);">
-                    Sortear do Forms
-                </button>
-            </div>
-        </form>
+    <textarea name="nomes" placeholder="Nomes aparecerão aqui após o sorteio...">{{ nomes }}</textarea>
+    
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px;">
+        <!-- Botão de largura total -->
+        <button type="submit" name="origem" value="manual" style="grid-column: span 2; background: #334155;">
+            Sorteio Manual (Lista acima)
+        </button>
+        
+        <!-- Botão Laranja para Presencial -->
+        <button type="submit" name="origem" value="Presencial" style="background: linear-gradient(135deg, #f59e0b, #d97706);">
+            Sorteio Presencial
+        </button>
+        
+        <!-- Botão Verde para Remoto -->
+        <button type="submit" name="origem" value="Remoto" style="background: linear-gradient(135deg, #10b981, #059669);">
+            Sorteio Remoto
+        </button>
+    </div>
+</form>
 
         {% if resultado %}
             <div class="resultado-box">
