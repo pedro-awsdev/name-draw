@@ -112,8 +112,16 @@
         <p>Sorteador Especial para Universitários</p>
         
         <form method="POST">
-            <textarea name="nomes" placeholder="Insira os nomes separados por ;">{{ nomes }}</textarea>
-            <button type="submit">Realizar Sorteio</button>
+            <textarea name="nomes" placeholder="Nomes separados por ;">{{ nomes }}</textarea>
+            
+            <div style="display: flex; gap: 10px; margin-top: 15px;">
+                <button type="submit" name="origem" value="manual" style="flex: 1;">Sorteio Manual</button>
+                
+                <button type="submit" name="origem" value="google" 
+                        style="flex: 1; background: linear-gradient(135deg, #10b981, #059669);">
+                    Sortear do Forms
+                </button>
+            </div>
         </form>
 
         {% if resultado %}
