@@ -6,7 +6,7 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-# Link do CSV da aba "Sorteio" publicada na web
+# Link do CSV de uma planilha publicada na Web
 URL_PLANILHA = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQblQOdI0C7djSivXnkd4Y-zz9LhqdMCLdoPCp7uZtku_VVIOcKE7FvFTi9PDVENg7pIwksYhnTBpCH/pub?gid=1156694142&single=true&output=csv"
 
 def pegar_nomes_google(modalidade_alvo):
@@ -25,7 +25,7 @@ def pegar_nomes_google(modalidade_alvo):
                 nome = row[0].strip()
                 modalidade = row[1].strip()
                 
-                # O filtro agora compara com "Remoto" ou "Presencial"
+                # Compara com "Remoto" ou "Presencial"
                 if modalidade == modalidade_alvo:
                     nomes_filtrados.append(nome)
                     
